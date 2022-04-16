@@ -108,6 +108,6 @@ using the command:
 
 
 ## Authors
-Andrea Bellmunt Fuentes (https://github.com/andreabellmunt) and Pol Lizaran Campano (https://github.com/PolLizaran)
+Andrea Bellmunt Fuentes (https://github.com/andreabellmunt) & Pol Lizaran Campano (https://github.com/PolLizaran)
 
 Data Science and Engineering, UPC, 2021
