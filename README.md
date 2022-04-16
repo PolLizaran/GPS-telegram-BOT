@@ -1,4 +1,4 @@
-#iGo
+# iGo
 iGo is a program implemented in a bot in Telegram that offers the fastest path
 from the user's location to a requested destination, all by driving in the city
 of Barcelona.
@@ -52,18 +52,52 @@ Ajuntament de Barcelona to:
   edges that correspond to the main roads or all the roads.
 
   - Compute the travel time in an edge knowing the `speed`, `length`, and the state of
-the congestion, which is uploaded as a new attribute to a graph by the name of `itime`.
+the congestion, which is uploaded as the new version of the attribute `travel_time`.
 
   - Obtain the shortest path from two different locations.
 
   - Print a map that highlights a determined path.
 
 ### Usage of the module `igo`
-- The examples that would be
+In order to know how to use the functions defined in this module, it has been
+included a group of examples, which are the following:
 
-```{python}
+  - Printing a map that indicates the type of congestion in each highway:
 
-```
+`plot_congestions(highways, congestions, filename, graph_size)`
+
+Parameters | Meaning
+-----------|----------
+highways | List of highways (defined `collections.namedtuple`) that include their ID, name, coordinates, and closest nodes
+congestions | List of congestions (defined `collections.namedtuple`) that include their ID, time of the day and date, current state, and future state
+filename | Wanted name for the map that is going to be saved as an image (`PNG`)
+graph_size | Size of the map that is going to be printed
+
+  - Computing the fastest path from one place to another:
+
+`get_shortest_path_with_ispeeds(igraph, origin, destination)`
+
+Parameters | Meaning
+-----------|----------
+igraph | Graph created by using the function `build_igraph` that contains the travel time of each edge considering the congestions
+origin | Location in which the path starts, which can be the name or the coordinates
+destination | Location in which the path ends, which can be the name or the coordinates
+
+  ```{python}
+  get_shortest_path_with_ispeeds(igraph, "Sagrada Família, Barcelona", "Campus Nord, Barcelona")
+  get_shortest_path_with_ispeeds(igraph, [41.4036299, 2.1743558], [41.388575, 2.112256])
+  ```
+  - Plotting the graph in the map of the city:
+
+  `plot_path(igraph, ipath, graph_size, file_name)`
+
+  Parameters | Meaning
+  -----------|----------
+  igraph | Graph that contains the travel time of each edge considering the congestions
+  ipath | Path created with the function `get_shortest_path_with_ispeeds`
+  graph_size | Size of the map that is going to be printed
+  filename | Wanted name for the map that is going to be saved as an image (PNG)
+
 
 ## Requirements
 To be able to execute the different modules, it is necessary to install a set of packages that are
