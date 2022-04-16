@@ -58,13 +58,6 @@ the congestion, which is uploaded as a new attribute to a graph by the name of `
 
   - Print a map that highlights a determined path.
 
-### Usage of the module `igo`
-- The examples that would be
-
-```{python}
-
-```
-
 ## Requirements
 To be able to execute the different modules, it is necessary to install a set of packages that are
 in the `requirements.txt`, which includes the versions used in the project. This can be done by
